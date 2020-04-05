@@ -5,7 +5,7 @@
 }
 
 /*header*/
-h1 {
+.display-8 {
  color: whitesmoke;
 }
 
@@ -38,7 +38,12 @@ body {
 
 /* results */
 #results {
-    float: left; 
+    border-style: solid;
+    border-color: lightgray;
+    border-width: 0.5px;
+    padding: 10px;
+    text-indent: 1em;
+    
 }
 
 .cities {
