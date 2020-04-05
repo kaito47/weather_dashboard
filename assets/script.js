@@ -103,8 +103,20 @@ $.ajax({
     console.log(response);
 
     console.log(response.daily[0]);
+    console.log(response.daily[1]);
+    console.log(response.daily[2]);
+    console.log(response.daily[3]);
+    console.log(response.daily[4]);
 
-    $("#dayOne").text(`${response.daily[0].dt} ${response.daily[0].weather[0].icon} ${response.daily[0].temp.day} ${response.daily[0].feels_like.day}`);
+    $("#dayOne").append(`<li>${response.daily[0].dt}</li> <li>${response.daily[0].weather[0].icon}</li> <li>${response.daily[0].temp.day}</li> <li>${response.daily[0].humidity}</li>`);
+
+    $("#dayTwo").append(`<li>${response.daily[1].dt}</li> <li>${response.daily[1].weather[0].icon}</li> <li>${response.daily[1].temp.day}</li> <li>${response.daily[1].humidity}</li>`);
+
+    $("#dayThree").append(`<li>${response.daily[2].dt}</li> <li>${response.daily[2].weather[0].icon}</li> <li>${response.daily[2].temp.day}</li> <li>${response.daily[2].humidity}</li>`);
+
+    $("#dayFour").append(`<li>${response.daily[3].dt}</li> <li>${response.daily[3].weather[0].icon}</li> <li>${response.daily[3].temp.day}</li> <li>${response.daily[3].humidity}</li>`);
+
+    $("#dayFive").append(`<li>${response.daily[4].dt}</li> <li>${response.daily[4].weather[0].icon}</li> <li>${response.daily[4].temp.day}</li> <li>${response.daily[4].humidity}</li>`);
 });
 
 });
