@@ -11,7 +11,7 @@
          
     //    }
      
- 
+ $("#citySearch").val(" ");
  // This .on("click") function will trigger the AJAX Call
  $("#search").on("click", function(event) {
     event.preventDefault();
@@ -40,6 +40,9 @@
 $.ajax({
   url: queryURL,
   method: "GET",
+  beforeSend: function(){
+    //put loading gif in div here
+  }
 }).then(function(response) {
  $("#citySearch").text(JSON.stringify(response));
 
@@ -54,6 +57,9 @@ $.ajax({
     var tempF = (response.main.temp -273.15) * 1.80 + 32;
     // $("#results").append("<h6>Temperature: " + tempF.toFixed(2) + " F" + "</h6>");
     $("#temperature").html("Temperature: " + tempF.toFixed(2) + " F" );
+
+    //adding humidity to results div:
+    $("#humidity").html("Humidity: " + response.main.humidity + " %");
 
     // adding wind speed to results div:
     // $("#results").append("<h6>Wind Speed: " + response.wind.speed + " MPH" + "</h6>");
@@ -80,8 +86,34 @@ $.ajax({
       console.log(response);
   });
 
-}); 
-  // http://api.openweathermap.org/data/2.5/uvi?appid={appid}&lat={lat}&lon={lon}
+// }); 
+
+// constructing URL for forecast:
+var queryURL = "https://api.openweathermap.org/data/2.5/onecall?lat=" + latitude + "&lon=" + longitude + "&appid=" + apiKey;
+
+// https://api.openweathermap.org/data/2.5/onecall?lat={lat}&lon={lon}&appid={YOUR API KEY}
+
+// call to obtain forecast:
+
+$.ajax({
+  url: queryURL,
+  method: "GET",
+}).then(function(response) {
+ 
+    console.log(response);
+
+    console.log(response.daily[0]);
+
+    $("#dayOne").text(`${response.daily[0].dt} ${response.daily[0].weather[0].icon} ${response.daily[0].temp.day} ${response.daily[0].feels_like.day}`);
+});
+
+});
+
+
+});
+// });
+
+ // http://api.openweathermap.org/data/2.5/uvi?appid={appid}&lat={lat}&lon={lon}
 
   // this kind of works but gets the whole object and doesn't prepend:
     // $.ajax({
@@ -106,10 +138,6 @@ $.ajax({
 //         //end ari's code
       // displayCity();
   //  });
-
-});
-
-
 
 // document.addEventListener('DOMContentLoaded', function() {
 //   var elems = document.querySelectorAll('.modal');
