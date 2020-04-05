@@ -1,0 +1,39 @@
+/* jumbotron */
+.jumbotron {
+ text-align: center;
+ background-color: rgb(4, 39, 39);
+}
+
+/*header*/
+h1 {
+ color: whitesmoke;
+}
+
+.lead {
+    color: whitesmoke;
+}
+
+.my-4 {
+    background-color: white;
+}
+
+/* body */
+body {
+    background-color: white;
+}
+
+/* search panel */
+#searchPanel {
+    margin-left: 5%;
+    width: 30%;
+    float: left;
+}
+
+/* results */
+#results {
+    width: 70%;
+    float: left; 
+}
+/* .weather {
+    float: left;
+} */
