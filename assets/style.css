@@ -17,21 +17,27 @@ h1 {
     background-color: white;
 }
 
+
 /* body */
 body {
     background-color: white;
 }
 
+/* container */
+.container {
+    display: grid; 
+    grid-template-columns: 30% 60%;
+    grid-column-gap: 2em;
+}
+
 /* search panel */
 #searchPanel {
     margin-left: 5%;
-    width: 30%;
     float: left;
 }
 
 /* results */
 #results {
-    width: 70%;
     float: left; 
 }
 
@@ -42,6 +48,13 @@ body {
     padding: 10px;
     text-indent: 1em;
 }
+
+#searchPanel {
+    border-style: solid;
+    border-color: lightgray;
+    border-width: 0.5px;
+}
+
 /* .weather {
     float: left;
 } */
