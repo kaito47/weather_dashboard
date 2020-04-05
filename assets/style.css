@@ -34,6 +34,20 @@ body {
     width: 70%;
     float: left; 
 }
+
+.cities {
+    border-style: solid;
+    border-color: lightgray;
+    border-width: 0.5px;
+    padding: 10px;
+    text-indent: 1em;
+}
 /* .weather {
     float: left;
+} */
+
+/* #recentlySearched {
+    padding: 5px;
+    border-style: solid;
+    border-color: darkcyan;
 } */
