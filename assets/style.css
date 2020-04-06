@@ -28,6 +28,7 @@ body {
     display: grid; 
     grid-template-columns: 30% 70%;
     grid-column-gap: 2em;
+    grid-auto-rows:minmax(1000px);
 }
 
 /* search panel */
@@ -41,8 +42,9 @@ body {
     border-style: solid;
     border-color: lightgray;
     border-width: 0.5px;
-    padding: 10px;
+    padding: 5px;
     text-indent: 1em;
+    margin-bottom: 50px;
     
 }
 
@@ -65,6 +67,7 @@ h6 {
 }
 
 .box {
+    margin-top: 5px;
     background-color: #008080;
     color: whitesmoke
 }
@@ -74,6 +77,7 @@ h6 {
     grid-template-columns:repeat(5, 1fr);
     grid-column-gap: 2em;
     grid-auto-rows: 200px;
+    font-size: 14px;
 
 }
 
@@ -87,13 +91,4 @@ li {
     margin-top: 5px;
 
 }
-/* .weather
- {
-    float: left;
-} */
 
-/* #recentlySearched {
-    padding: 5px;
-    border-style: solid;
-    border-color: darkcyan;
-} */
