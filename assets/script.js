@@ -132,17 +132,17 @@ $.ajax({
     $('#dayFourpng').attr('src', "http://openweathermap.org/img/wn/" + iconCodeFOUR + ".png");
     $('#dayFivepng').attr('src', "http://openweathermap.org/img/wn/" + iconCodeFIVE + ".png");
 
-  $(".weather").empty();
+  // $(".weather").empty();
 
-    $("#weatherOne").append(`<li>${"Temp: " + tempFONE + " F"}</li> <li>${"Humidity: " + response.daily[1].humidity + "%"}</li>`)
+    $("#weatherOne").html(`<li>${"Temp: " + tempFONE + " F"}</li> <li>${"Humidity: " + response.daily[1].humidity + "%"}</li>`)
 
-    $("#weatherTwo").append(`<li>${"Temp: " + tempFTWO + " F"}</li> <li>${"Humidity: " + response.daily[2].humidity + "%"}</li>`);
+    $("#weatherTwo").html(`<li>${"Temp: " + tempFTWO + " F"}</li> <li>${"Humidity: " + response.daily[2].humidity + "%"}</li>`);
 
-    $("#weatherThree").append(`<li>${"Temp: " + tempFTHREE + " F"}</li> <li>${"Humidity: " + response.daily[3].humidity + "%"}</li>`);
+    $("#weatherThree").html(`<li>${"Temp: " + tempFTHREE + " F"}</li> <li>${"Humidity: " + response.daily[3].humidity + "%"}</li>`);
 
-    $("#weatherFour").append(`<li>${"Temp: " + tempFFOUR + " F"}</li> <li>${"Humidity: " + response.daily[4].humidity + "%"}</li>`);
+    $("#weatherFour").html(`<li>${"Temp: " + tempFFOUR + " F"}</li> <li>${"Humidity: " + response.daily[4].humidity + "%"}</li>`);
 
-    $("#weatherFive").append(`<li>${"Temp: " + tempFFIVE + " F"}</li> <li>${"Humidity: " + response.daily[5].humidity + "%"}</li>`);
+    $("#weatherFive").html(`<li>${"Temp: " + tempFFIVE + " F"}</li> <li>${"Humidity: " + response.daily[5].humidity + "%"}</li>`);
     }
 );
 
