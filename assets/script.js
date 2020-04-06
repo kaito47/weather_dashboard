@@ -108,16 +108,34 @@ $.ajax({
     console.log(response.daily[3]);
     console.log(response.daily[4]);
 
-    $("#dayOne").append(`<li>${response.daily[0].dt}</li> <li>${response.daily[0].weather[0].icon}</li> <li>${response.daily[0].temp.day}</li> <li>${response.daily[0].humidity}</li>`);
 
-    $("#dayTwo").append(`<li>${response.daily[1].dt}</li> <li>${response.daily[1].weather[0].icon}</li> <li>${response.daily[1].temp.day}</li> <li>${response.daily[1].humidity}</li>`);
+    // loop to convert temp to fahrenheit and add to results div:
+    // let forecastTemps=[];
 
-    $("#dayThree").append(`<li>${response.daily[2].dt}</li> <li>${response.daily[2].weather[0].icon}</li> <li>${response.daily[2].temp.day}</li> <li>${response.daily[2].humidity}</li>`);
+    // for (i=0; i < 5; i++) {
 
-    $("#dayFour").append(`<li>${response.daily[3].dt}</li> <li>${response.daily[3].weather[0].icon}</li> <li>${response.daily[3].temp.day}</li> <li>${response.daily[3].humidity}</li>`);
+      var tempFONE = (((response.daily[0].temp.day -273.15) * 1.80 + 32).toFixed(2));
+      var tempFTWO = (((response.daily[1].temp.day -273.15) * 1.80 + 32).toFixed(2));
+      var tempFTHREE = (((response.daily[2].temp.day -273.15) * 1.80 + 32).toFixed(2));
+      var tempFFOUR = (((response.daily[3].temp.day -273.15) * 1.80 + 32).toFixed(2));
+      var tempFFIVE = (((response.daily[4].temp.day -273.15) * 1.80 + 32).toFixed(2));
+    // console.log(tempF);
 
-    $("#dayFive").append(`<li>${response.daily[4].dt}</li> <li>${response.daily[4].weather[0].icon}</li> <li>${response.daily[4].temp.day}</li> <li>${response.daily[4].humidity}</li>`);
-});
+    // forecastTemps.push(tempF);
+    
+    // console.log(forecastTemps);
+      
+    $("#dayOne").append(`<li>${response.daily[0].dt}</li> <li>${response.daily[0].weather[0].icon}</li> <li>${tempFONE + " F"}</li> <li>${response.daily[0].humidity + "%"}</li>`);
+
+    $("#dayTwo").append(`<li>${response.daily[1].dt}</li> <li>${response.daily[1].weather[0].icon}</li> <li>${tempFTWO + " F"}</li> <li>${response.daily[1].humidity + "%"}</li>`);
+
+    $("#dayThree").append(`<li>${response.daily[2].dt}</li> <li>${response.daily[2].weather[0].icon}</li> <li>${tempFTHREE + " F"}</li> <li>${response.daily[2].humidity + "%"}</li>`);
+
+    $("#dayFour").append(`<li>${response.daily[3].dt}</li> <li>${response.daily[3].weather[0].icon}</li> <li>${tempFFOUR + " F"}</li> <li>${response.daily[3].humidity + "%"}</li>`);
+
+    $("#dayFive").append(`<li>${response.daily[4].dt}</li> <li>${response.daily[4].weather[0].icon}</li> <li>${tempFFIVE + " F"}</li> <li>${response.daily[4].humidity + "%"}</li>`);
+    }
+);
 
 });
 
