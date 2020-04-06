@@ -124,16 +124,36 @@ $.ajax({
     // forecastTemps.push(tempF);
     
     // console.log(forecastTemps);
-      
-    $("#dayOne").append(`<li>${response.daily[0].dt}</li> <li>${response.daily[0].weather[0].icon}</li> <li>${tempFONE + " F"}</li> <li>${response.daily[0].humidity + "%"}</li>`);
 
-    $("#dayTwo").append(`<li>${response.daily[1].dt}</li> <li>${response.daily[1].weather[0].icon}</li> <li>${tempFTWO + " F"}</li> <li>${response.daily[1].humidity + "%"}</li>`);
+    // to add icons:
+    var iconCodeONE = response.daily[0].weather[0].icon;
+    var iconCodeTWO = response.daily[1].weather[0].icon;
+    var iconCodeTHREE = response.daily[2].weather[0].icon;
+    var iconCodeFOUR = response.daily[3].weather[0].icon;
+    var iconCodeFIVE = response.daily[4].weather[0].icon;
 
-    $("#dayThree").append(`<li>${response.daily[2].dt}</li> <li>${response.daily[2].weather[0].icon}</li> <li>${tempFTHREE + " F"}</li> <li>${response.daily[2].humidity + "%"}</li>`);
+    $('#dayOnepng').attr('src', "http://openweathermap.org/img/wn/" + iconCodeONE + ".png");
+    $('#dayTwopng').attr('src', "http://openweathermap.org/img/wn/" + iconCodeTWO + ".png");
+    $('#dayThreepng').attr('src', "http://openweathermap.org/img/wn/" + iconCodeTHREE + ".png");
+    $('#dayFourpng').attr('src', "http://openweathermap.org/img/wn/" + iconCodeFOUR + ".png");
+    $('#dayFivepng').attr('src', "http://openweathermap.org/img/wn/" + iconCodeFIVE + ".png");
 
-    $("#dayFour").append(`<li>${response.daily[3].dt}</li> <li>${response.daily[3].weather[0].icon}</li> <li>${tempFFOUR + " F"}</li> <li>${response.daily[3].humidity + "%"}</li>`);
+    // var iconurlONE = "http://openweathermap.org/img/wn/" + iconCodeONE + "@2x.png";
+    // var iconurlTWO = "http://openweathermap.org/img/wn/" + iconCodeTWO + "@2x.png";
+    // var iconurlTHREE = "http://openweathermap.org/img/wn/" + iconCodeTHREE + "@2x.png";
+    // var iconurlFOUR = "http://openweathermap.org/img/wn/" + iconCodeFOUR + "@2x.png";
+    // var iconurlFIVE = "http://openweathermap.org/img/wn/" + iconCodeFIVE + "@2x.png";
 
-    $("#dayFive").append(`<li>${response.daily[4].dt}</li> <li>${response.daily[4].weather[0].icon}</li> <li>${tempFFIVE + " F"}</li> <li>${response.daily[4].humidity + "%"}</li>`);
+
+    $("#dayOne").append(`<li>${tempFONE + " F"}</li> <li>${response.daily[0].humidity + "%"}</li>`)
+
+    $("#dayTwo").append(`<li>${tempFTWO + " F"}</li> <li>${response.daily[1].humidity + "%"}</li>`);
+
+    $("#dayThree").append(`<li>${tempFTHREE + " F"}</li> <li>${response.daily[2].humidity + "%"}</li>`);
+
+    $("#dayFour").append(`<li>${tempFFOUR + " F"}</li> <li>${response.daily[3].humidity + "%"}</li>`);
+
+    $("#dayFive").append(`<li>${tempFFIVE + " F"}</li> <li>${response.daily[4].humidity + "%"}</li>`);
     }
 );
 
