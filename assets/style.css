@@ -1,12 +1,14 @@
 /* jumbotron */
+
 .jumbotron {
- text-align: center;
- background-color: rgb(4, 39, 39);
+    text-align: center;
+    background-color: rgb(4, 39, 39);
 }
 
 /*header*/
+
 .display-8 {
- color: whitesmoke;
+    color: whitesmoke;
 }
 
 .lead {
@@ -17,27 +19,30 @@
     background-color: white;
 }
 
-
 /* body */
+
 body {
     background-color: white;
 }
 
 /* container */
+
 .container {
-    display: grid; 
+    display: grid;
     grid-template-columns: 30% 70%;
     grid-column-gap: 2em;
-    grid-auto-rows:minmax(1000px);
+    grid-auto-rows: minmax(1000px);
 }
 
 /* search panel */
+
 #searchPanel {
     margin-left: 5%;
     float: left;
 }
 
 /* results */
+
 #results {
     border-style: solid;
     border-color: lightgray;
@@ -45,7 +50,6 @@ body {
     padding: 5px;
     text-indent: 1em;
     margin-bottom: 50px;
-    
 }
 
 .cities {
@@ -74,11 +78,17 @@ h6 {
 
 #forecast {
     display: grid;
-    grid-template-columns:repeat(5, 1fr);
+    grid-template-columns: repeat(5, 1fr);
     grid-column-gap: 2em;
     grid-auto-rows: 200px;
-    font-size: 14px;
+    font-size: 0.8em;
+    text-align: center;
+}
 
+p {
+    font-size: 1.5em;
+    text-align: center;
+    font-weight: bold;
 }
 
 #uvIndex {
@@ -89,6 +99,8 @@ li {
     list-style: none;
     padding: 10px;
     margin-top: 5px;
-
 }
 
+img {
+    position: center;
+}
